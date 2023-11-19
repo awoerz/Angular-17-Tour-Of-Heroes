@@ -13,7 +13,10 @@
   min-width: 150px;
 }
 
-.heroes button {
+.heroes a {
+  text-align: center;
+  text-decoration: none;
+  color: #333;
   flex: 1;
   cursor: pointer;
   position: relative;
@@ -23,32 +26,32 @@
   padding: 0;
   border-radius: 4px;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   height: 1.8em;
 }
 
-.heroes button:hover {
+.heroes a:hover {
   color: #2c3a41;
   background-color: #e6e6e6;
   left: 0.1em;
 }
 
-.heroes button:active {
+.heroes a:active {
   background-color: #525252;
   color: #fafafa;
 }
 
-.heroes button.selected {
+.heroes a.selected {
   background-color: #505050;
   color: white;
 }
 
-.heroes button.selected:hover {
+.heroes a.selected:hover {
   background-color: #505050;
   color: white;
 }
 
-.heroes button.selected:active {
+.heroes a.selected:active {
   background-color: black;
   color: white;
 }
@@ -57,11 +60,12 @@
   display: inline-block;
   font-size: small;
   color: white;
-  padding: 0.8em 0.7em 0 0.7em;
+  padding: 0.7em 0.6em 0.6em 0.6em;
   background-color: #405061;
   line-height: 1em;
   margin-right: 0.8em;
   border-radius: 4px 0 0 4px;
+  overflow: hidden;
 }
 
 .heroes .name {

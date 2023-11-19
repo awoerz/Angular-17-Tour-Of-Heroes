@@ -6,29 +6,25 @@ import { HEROES } from '../mock-heroes';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [CommonModule, FormsModule, HeroDetailComponent],
+  imports: [CommonModule, FormsModule, HeroDetailComponent, RouterLink],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.scss'
 })
 export class HeroesComponent {
   heroes: Hero[] = [];
-  selectedHero?: Hero;
-  
+
   constructor(private _heroService: HeroService, private _messageService: MessageService) {}
   
   ngOnInit(): void {
     this.getHeroes();
   }
-    
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this._messageService.add(`HeroesComponent: Selected hero id=${hero.id}`)
-  }
-
+  
+  //I believe this should be done with signals now but I will change it once I learn more about Signals. 
   getHeroes(): void {
     this._heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);

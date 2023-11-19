@@ -3,12 +3,10 @@
     <!-- New syntax replacing NgFor-->
     @for (hero of heroes; track hero.id) {
         <li>
-            <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+            <a routerLink="/detail/{{hero.id}}">
                 <span class="badge">{{hero.id}}</span>
-                <span class="name">{{hero.name}}</span>
-            </button>
+                <span>{{hero.name}}</span>
+            </a>
         </li>
     }
 </ul>
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
