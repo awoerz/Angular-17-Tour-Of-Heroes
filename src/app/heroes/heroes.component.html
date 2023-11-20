@@ -1,4 +1,12 @@
-<h2>My Heroes</h2>    
+<h2>My Heroes</h2>   
+<div>
+    <label for="new-hero">Hero name: </label>
+    <input id="new-hero" #heroName />
+
+    <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">Add hero </button>
+</div>
+
+
 <ul class="heroes">
     <!-- New syntax replacing NgFor-->
     @for (hero of heroes; track hero.id) {
@@ -7,6 +15,7 @@
                 <span class="badge">{{hero.id}}</span>
                 <span>{{hero.name}}</span>
             </a>
+            <button type="button" class="delete" title="delete-hero" (click)="delete(hero)">X</button>
         </li>
     }
 </ul>
